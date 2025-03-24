@@ -24,16 +24,6 @@ public class Main {
         Contacto c = new Contacto("Perez", "Ian", 25242323);
 
         agenda.adContacto(c);
-        agenda.adContacto(c);
-        agenda.adContacto(c);
-        agenda.adContacto(c);
-        agenda.adContacto(c);
-        agenda.adContacto(c);
-        agenda.adContacto(c);
-        agenda.adContacto(c);
-        agenda.adContacto(c);
-        agenda.adContacto(c);
-        agenda.adContacto(c);
 
         agenda.listarContactos();
     }
