@@ -1,3 +1,6 @@
+import com.generation.ejercicio.informacion.Agenda;
+import com.generation.ejercicio.informacion.Contacto;
+
 import java.util.Scanner;
 
 public class Main {
@@ -16,5 +19,22 @@ public class Main {
 
         menu = new Scanner(System.in).nextInt();
 
+        Agenda agenda = new Agenda(10);
+
+        Contacto c = new Contacto("Perez", "Ian", 25242323);
+
+        agenda.adContacto(c);
+        agenda.adContacto(c);
+        agenda.adContacto(c);
+        agenda.adContacto(c);
+        agenda.adContacto(c);
+        agenda.adContacto(c);
+        agenda.adContacto(c);
+        agenda.adContacto(c);
+        agenda.adContacto(c);
+        agenda.adContacto(c);
+        agenda.adContacto(c);
+
+        agenda.listarContactos();
     }
 }
