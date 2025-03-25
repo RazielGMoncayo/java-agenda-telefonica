@@ -17,10 +17,10 @@ public class Main {
         System.out.println("\n");
         System.out.println("Bienvenido a Agendrix!! Tu agenda personal");
         System.out.println("\n");
-        System.out.println("¿Prefieres configuración personalizada o inicio rapido?");
+        System.out.println("¿Prefieres configuración personalizada o inicio rapido?  (Ingresa 1 o 2 seguido de enter)");
 
         System.out.println("1) Personalizar");
-        System.out.println("2) Iniciar (10 contactos por defecto)");
+        System.out.println("2) Inicio rapido (10 contactos por defecto)");
 
         menu = sc.nextInt();
 
