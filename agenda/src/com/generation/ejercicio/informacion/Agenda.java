@@ -100,20 +100,47 @@ public static void buscaContacto(String nombre, String apellido){
         }
         System.out.println(encontrado ? contactoEncontrado.getApellido() + " " + contactoEncontrado.getName() + " " + contactoEncontrado.getTelefono() : "No existe el contacto");
     }
-//
+
 //    eliminarContacto(Contacto c){} // luis miguel
 
-//
-//    modificarTelefono(String nombre, String apellido, String nuevoTelefono){}
-    public static void modificarNombre(){
 
+//    modificarTelefono(String nombre, String apellido, String nuevoTelefono){}
+    public static void modificarTelefono(String nombre, String apellido, int nuevoTelefono){
+        boolean encontrado = false;
+        Contacto contactoEncontrado = null;
+
+        for (Contacto c : contactos){
+            if (c.getName().equalsIgnoreCase(nombre) && c.getApellido().equalsIgnoreCase(apellido)) {
+                c.setTelefono(nuevoTelefono);
+                encontrado = true;
+                contactoEncontrado = c;
+                break;
+            }
+        }
+        System.out.println(encontrado ? "Telefono actualizado: " + contactoEncontrado.getApellido() + " " + contactoEncontrado.getName() + " " + contactoEncontrado.getTelefono() : "No existe el contacto");
     }
 
+    // moficar nombre y apellido por numero
+    public static void modificarNombreCompleto( int telefono, String nuevoNombre, String nuevoApellido){
+        boolean encontrado = false;
+        Contacto contactoEncontrado = null;
+
+        for (Contacto c : contactos){
+            if (c.getTelefono() == telefono ) {
+                c.setName(nuevoNombre);
+                c.setApellido(nuevoApellido);
+                encontrado = true;
+                contactoEncontrado = c;
+                break;
+            }
+        }
+        System.out.println(encontrado ? "Nombre actualizado: " + contactoEncontrado.getApellido() + " " + contactoEncontrado.getName() + " " + contactoEncontrado.getTelefono() : "No existe el contacto");
+    }
 //
-//    agendaLlena(){} no hacer raziel
+//    agendaLlena(){}
 
 //
-//    espacioLibres(){} no hacer raziel
+//    espacioLibres(){}
 
 
 
