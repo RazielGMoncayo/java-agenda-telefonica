@@ -5,15 +5,12 @@ import java.util.ArrayList;
 public class Agenda{
 
     private ArrayList<Contacto> contactos = new ArrayList<Contacto>();
-    private int numContactos = 10;
+    private int numContactos;
     private int numContactosLibres;
 
     public Agenda(int numContactos){
         this.numContactos = numContactos;
-    };
-
-    // Herramientas
-    // https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html
+    }
 
     public void adContacto(Contacto c){
         if(contactos.size() >= numContactos){
@@ -22,7 +19,6 @@ public class Agenda{
         }else{
             contactos.add(c);
         }
-
     }
 
     public void listarContactos(){
