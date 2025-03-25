@@ -24,9 +24,16 @@ public class Agenda{
         }
     }
 
-//    existeContacto(){}
-    public void existeContacto(){
-
+    //    existeContacto(){}
+    public static void existeContacto( String apellido, String nombre){
+        boolean encontrado = false;
+        for (Contacto c : contactos){
+            if (c.getName().equalsIgnoreCase(nombre) && c.getApellido().equalsIgnoreCase(apellido)) {
+                encontrado = true;
+                break;
+            }
+        }
+        System.out.println(encontrado ? "Sí existe el contacto" : "No existe el contacto");
     }
 
 //    listarContactos(){}
