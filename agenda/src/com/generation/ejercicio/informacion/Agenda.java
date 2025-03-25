@@ -44,6 +44,21 @@ public class Agenda{
     }
 
 //    buscaContacto(String nombre){}
+    // buscar contacto nombre y apellido
+public static void buscaContacto(String nombre, String apellido){
+    boolean encontrado = false;
+    Contacto contactoEncontrado = null;
+
+    for (Contacto c : contactos){
+        if (c.getName().equalsIgnoreCase(nombre) && c.getApellido().equalsIgnoreCase(apellido)) {
+            encontrado = true;
+            contactoEncontrado = c;
+            break;
+        }
+    }
+    System.out.println(encontrado ? contactoEncontrado.getApellido() + " " + contactoEncontrado.getName() + " " + contactoEncontrado.getTelefono() : "No existe el contacto");
+}
+    // nombre
     public static void buscaContactoNombre(String nombre){
         boolean encontrado = false;
         Contacto contactoEncontrado = null;
@@ -57,7 +72,7 @@ public class Agenda{
         }
         System.out.println(encontrado ? contactoEncontrado.getApellido() + " " + contactoEncontrado.getName() + " " + contactoEncontrado.getTelefono() : "No existe el contacto");
     }
-
+    // apellido
     public static void buscaContactoApellido(String apellido){
         boolean encontrado = false;
         Contacto contactoEncontrado = null;
@@ -90,6 +105,9 @@ public class Agenda{
 
 //
 //    modificarTelefono(String nombre, String apellido, String nuevoTelefono){}
+    public static void modificarNombre(){
+
+    }
 
 //
 //    agendaLlena(){} no hacer raziel
