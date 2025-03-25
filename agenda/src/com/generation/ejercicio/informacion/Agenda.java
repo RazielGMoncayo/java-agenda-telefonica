@@ -43,9 +43,34 @@ public class Agenda{
         }
     }
 
-
-//
 //    buscaContacto(String nombre){}
+    public static void buscaContactoNombre(String nombre){
+        boolean encontrado = false;
+        Contacto contactoEncontrado = null;
+
+        for (Contacto c : contactos){
+            if (c.getName().equalsIgnoreCase(nombre)) {
+                encontrado = true;
+                contactoEncontrado = c;
+                break;
+            }
+        }
+        System.out.println(encontrado ? contactoEncontrado.getApellido() + " " + contactoEncontrado.getName() + " " + contactoEncontrado.getTelefono() : "No existe el contacto");
+    }
+
+    public static void buscaContactoApellido(String apellido){
+        boolean encontrado = false;
+        Contacto contactoEncontrado = null;
+
+        for (Contacto c : contactos){
+            if (c.getApellido().equalsIgnoreCase(apellido)) {
+                encontrado = true;
+                contactoEncontrado = c;
+                break;
+            }
+        }
+        System.out.println(encontrado ? contactoEncontrado.getApellido() + " " + contactoEncontrado.getName() + " " + contactoEncontrado.getTelefono() : "No existe el contacto");
+    }
 //
 //    eliminarContacto(Contacto c){}
 //
