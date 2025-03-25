@@ -6,6 +6,7 @@ public class Agenda{
 
     private ArrayList<Contacto> contactos = new ArrayList<Contacto>();
     private int numContactos = 10;
+    private int numContactosLibres;
 
     public Agenda(int numContactos){
         this.numContactos = numContactos;
@@ -28,6 +29,10 @@ public class Agenda{
         for(Contacto c : contactos){
             System.out.println(c.getApellido() + " " + c.getName() + " " + c.getTelefono());
         }
+    }
+
+    public ArrayList<Contacto> getContactos(){
+        return contactos;
     }
 
 }
