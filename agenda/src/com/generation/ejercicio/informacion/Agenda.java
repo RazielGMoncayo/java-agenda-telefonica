@@ -3,33 +3,12 @@ package com.generation.ejercicio.informacion;
 import java.util.ArrayList;
 
 public class Agenda{
-
-    private ArrayList<Contacto> contactos = new ArrayList<Contacto>();
-    private int numContactos;
-
-    public Agenda(int numContactos) {
-        this.numContactos = numContactos;
-    }
-
-    public ArrayList<Contacto> getContactos() {
-        return contactos;
-    }
-
-    public void setContactos(ArrayList<Contacto> contactos) {
-        this.contactos = contactos;
-    }
-
-    public int getNumContactos() {
-        return numContactos;
-    }
-
-    public void setNumContactos(int numContactos) {
-        this.numContactos = numContactos;
-    }
+    private static final ArrayList<Contacto> contactos = new ArrayList<Contacto>();
+    private static int numContactos = 10;
 
     public Agenda(int numContactos){
         this.numContactos = numContactos;
-    };
+    }
 
     // Herramientas
     // https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html
@@ -41,25 +20,23 @@ public class Agenda{
             return;
         }else{
             contactos.add(c);
-            System.out.println(c);
+            System.out.println("Contacto agregado: " + c.getApellido() + " " + c.getName() + " " + c.getTelefono());
         }
+    }
+
+//    existeContacto(){}
+    public void existeContacto(){
 
     }
 
-//
-//    existeContacto(){}
-//    public void existeContacto(){
-//
-//    }
-//
 //    listarContactos(){}
-    public void listarContactos(){
+    public static void listarContactos(){
         for(Contacto c : contactos){
             System.out.println(c.getApellido() + " " + c.getName() + " " + c.getTelefono());
         }
     }
 
-    }
+
 //
 //    buscaContacto(String nombre){}
 //
@@ -70,4 +47,7 @@ public class Agenda{
 //    agendaLlena(){}
 //
 //    espacioLibres(){}
+
+
 }
+
