@@ -41,7 +41,7 @@ public class Agenda {
 
     //    buscaContacto(String nombre){}
     // buscar contacto nombre y apellido
-    public void buscaContacto(String nombre, String apellido) {
+    public Contacto buscaContacto(String nombre, String apellido) {
         boolean encontrado = false;
         Contacto contactoEncontrado = null;
 
@@ -52,41 +52,36 @@ public class Agenda {
                 break;
             }
         }
-        System.out.println(encontrado ? contactoEncontrado.getApellido() + " " + contactoEncontrado.getName() + " " + contactoEncontrado.getTelefono() : "No existe el contacto");
-    }
-
-    // nombre
-    public void buscaContactoNombre(String nombre) {
-        boolean encontrado = false;
-        Contacto contactoEncontrado = null;
-
-        for (Contacto c : contactos) {
-            if (c.getName().equalsIgnoreCase(nombre)) {
-                encontrado = true;
-                contactoEncontrado = c;
-                break;
-            }
+        if (encontrado) {
+            return contactoEncontrado;
+        }else{
+            return null;
         }
-        System.out.println(encontrado ? contactoEncontrado.getApellido() + " " + contactoEncontrado.getName() + " " + contactoEncontrado.getTelefono() : "No existe el contacto");
     }
 
     // apellido
-    public void buscaContactoApellido(String apellido) {
+    public Contacto buscaContactoNombreApellido(String nombre, String apellido) {
         boolean encontrado = false;
         Contacto contactoEncontrado = null;
 
         for (Contacto c : contactos) {
-            if (c.getApellido().equalsIgnoreCase(apellido)) {
+            if (c.getApellido().equalsIgnoreCase(apellido) && c.getName().equalsIgnoreCase(nombre)) {
                 encontrado = true;
                 contactoEncontrado = c;
                 break;
             }
         }
-        System.out.println(encontrado ? contactoEncontrado.getApellido() + " " + contactoEncontrado.getName() + " " + contactoEncontrado.getTelefono() : "No existe el contacto");
+        if (encontrado) {
+            System.out.println("Contacto encontrado: " + contactoEncontrado.getApellido() + " " + contactoEncontrado.getName() + " " + contactoEncontrado.getTelefono());
+            return contactoEncontrado;
+        }else {
+            System.out.println("No existe el contacto");
+            return null;
+        }
     }
 
     // numero
-    public void buscaContactoNumero(int numero) {
+    public Contacto buscaContactoNumero(long numero) {
         boolean encontrado = false;
         Contacto contactoEncontrado = null;
 
@@ -97,17 +92,31 @@ public class Agenda {
                 break;
             }
         }
-        System.out.println(encontrado ? contactoEncontrado.getApellido() + " " + contactoEncontrado.getName() + " " + contactoEncontrado.getTelefono() : "No existe el contacto");
+
+        if (encontrado) {
+            return contactoEncontrado;
+        }else {
+            System.out.println("No existe el contacto");
+            return null;
+        }
     }
 //
-//    eliminarContacto(Contacto c){} // luis miguel
-
-    //
-//    modificarTelefono(String nombre, String apellido, String nuevoTelefono){}
-    public static void modificarNombre() {
-
+    public void eliminarContacto(Contacto c){
+        try{
+            contactos.remove(c);
+        }catch(Exception e){
+            System.out.println( "No se pudo eliminar el contacto...... vuelve a intentarlo.");
+        }
     }
 
+//    modificarContacto(String nombre, String apellido, String nuevoTelefono){}
+    public static void modificarContacto(Contacto c, String nuevoNombre, String nuevoApellido, long nuevoTelefono) {
+        c.setApellido(nuevoApellido);
+        c.setName(nuevoNombre);
+        c.setTelefono(nuevoTelefono);
+    }
+
+// Obtener contactos
     public ArrayList<Contacto> getContactos() {
         return contactos;
     }
