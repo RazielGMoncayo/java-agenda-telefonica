@@ -71,14 +71,32 @@ public class Agenda{
         }
         System.out.println(encontrado ? contactoEncontrado.getApellido() + " " + contactoEncontrado.getName() + " " + contactoEncontrado.getTelefono() : "No existe el contacto");
     }
+    // numero
+    public static void buscaContactoNumero(int numero){
+        boolean encontrado = false;
+        Contacto contactoEncontrado = null;
+
+        for (Contacto c : contactos){
+            if (c.getTelefono() == numero) {
+                encontrado = true;
+                contactoEncontrado = c;
+                break;
+            }
+        }
+        System.out.println(encontrado ? contactoEncontrado.getApellido() + " " + contactoEncontrado.getName() + " " + contactoEncontrado.getTelefono() : "No existe el contacto");
+    }
 //
-//    eliminarContacto(Contacto c){}
+//    eliminarContacto(Contacto c){} // luis miguel
+
 //
 //    modificarTelefono(String nombre, String apellido, String nuevoTelefono){}
+
 //
-//    agendaLlena(){}
+//    agendaLlena(){} no hacer raziel
+
 //
-//    espacioLibres(){}
+//    espacioLibres(){} no hacer raziel
+
 
 
 }
