@@ -17,7 +17,7 @@ public class Agenda {
             return;
         } else {
             contactos.add(c);
-            System.out.println("Contacto agregado: " + c.getApellido() + " " + c.getName() + " " + c.getTelefono());
+//            System.out.println("Contacto agregado: " + c.getApellido() + " " + c.getName() + " " + c.getTelefono());
         }
     }
 
@@ -43,21 +43,15 @@ public class Agenda {
     //    buscaContacto(String nombre){}
     // buscar contacto nombre y apellido
     public Contacto buscaContacto(String nombre, String apellido) {
-        boolean encontrado = false;
-        Contacto contactoEncontrado = null;
+        String nombreBusqueda = nombre.trim();
+        String apellidoBusqueda = apellido.trim();
 
         for (Contacto c : contactos) {
-            if (c.getName().equalsIgnoreCase(nombre) && c.getApellido().equalsIgnoreCase(apellido)) {
-                encontrado = true;
-                contactoEncontrado = c;
-                break;
+            if (c.getName().equalsIgnoreCase(nombreBusqueda) && c.getApellido().equalsIgnoreCase(apellidoBusqueda)) {
+                return c;
             }
         }
-        if (encontrado) {
-            return contactoEncontrado;
-        }else{
-            return null;
-        }
+        return null;
     }
 
     // apellido
@@ -73,7 +67,7 @@ public class Agenda {
             }
         }
         if (encontrado) {
-            System.out.println("Contacto encontrado: " + contactoEncontrado.getApellido() + " " + contactoEncontrado.getName() + " " + contactoEncontrado.getTelefono());
+
             return contactoEncontrado;
         }else {
             System.out.println("No existe el contacto");
@@ -103,16 +97,12 @@ public class Agenda {
         }
     }
 //
-    public void eliminarContacto(Contacto c){
-        try{
-            contactos.remove(c);
-        }catch(Exception e){
-            System.out.println( "No se pudo eliminar el contacto...... vuelve a intentarlo.");
-        }
+    public boolean eliminarContacto(Contacto contacto){
+        return contactos.remove(contacto);
     }
 
 //    modificarContacto(String nombre, String apellido, String nuevoTelefono){}
-    public static void modificarContacto(Contacto c, String nuevoNombre, String nuevoApellido, long nuevoTelefono) {
+    public static void modificarTelefono(Contacto c, String nuevoNombre, String nuevoApellido, long nuevoTelefono) {
         c.setApellido(nuevoApellido);
         c.setName(nuevoNombre);
         c.setTelefono(nuevoTelefono);
