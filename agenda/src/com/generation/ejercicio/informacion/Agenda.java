@@ -5,6 +5,7 @@ public class Agenda {
     private ArrayList<Contacto> contactos = new ArrayList<Contacto>();
     private int numContactos;
 
+
     public Agenda(int numContactos) {
         this.numContactos = numContactos;
     }
@@ -92,6 +93,7 @@ public class Agenda {
                 break;
             }
         }
+
 
         if (encontrado) {
             return contactoEncontrado;
