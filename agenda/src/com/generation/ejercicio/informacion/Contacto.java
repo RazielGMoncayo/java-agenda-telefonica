@@ -3,9 +3,9 @@ package com.generation.ejercicio.informacion;
 public class Contacto {
     protected String name;
     protected String apellido;
-    protected int telefono;
+    protected long telefono;
 
-    public Contacto(String apellido, String name, int telefono) {
+    public Contacto(String apellido, String name, long telefono) {
         this.apellido = apellido;
         this.name = name;
         this.telefono = telefono;
@@ -27,11 +27,11 @@ public class Contacto {
         this.name = name;
     }
 
-    public int getTelefono() {
+    public long getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(long telefono) {
         this.telefono = telefono;
     }
 }
